@@ -1,7 +1,7 @@
 {
   "extends": "eslint:recommended",
   "rules": {
-    "no-console": "on",
+    "no-console": "error",
     "indent": ["error", 2]
   }
 }
