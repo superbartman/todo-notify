@@ -54,7 +54,7 @@ chrome.runtime.onMessage.addListener((message: any) => {
           }
           return true;
         },
-        60000,
+        10000,
         'noti',
       );
     });
