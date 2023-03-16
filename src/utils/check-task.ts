@@ -1,10 +1,7 @@
-interface Props {
-  cb: (value: Boolean) => void;
-}
-const checkTask = (props: Props) => {
+const checkTask = (cb: (result: Boolean) => void) => {
   chrome.storage.local.get('task').then((result) => {
     const task = result['task'];
-    props.cb?.(Boolean(task));
+    cb(Boolean(task));
   });
 };
 

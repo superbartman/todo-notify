@@ -8,7 +8,7 @@ let notiTimer: number = null;
 
 chrome.runtime.onMessage.addListener((message: any) => {
   if (message.message === 'start task') {
-    checkTask((result) => {
+    checkTask((result: Boolean) => {
       if (result) {
         return;
       }
