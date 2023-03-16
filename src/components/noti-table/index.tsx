@@ -1,7 +1,7 @@
 import React from 'react';
 
-import type { ProColumns } from '@ant-design/pro-components';
 import { EditableProTable } from '@ant-design/pro-components';
+import type { ProColumns } from '@ant-design/pro-components';
 
 export type DataSourceType = {
   id: React.Key;
@@ -105,7 +105,7 @@ const Index = () => {
           saveText: 'Save',
           deleteText: 'Delete',
           cancelText: 'Cancel',
-          onSave: (rowKey, data, row) => {
+          onSave: () => {
             return new Promise((resolve) => {
               resolve(true);
             });

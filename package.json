@@ -13,6 +13,7 @@
     "@types/react": "^17.0.1",
     "@types/react-dom": "^17.0.1",
     "@types/react-router-dom": "^5.2.0",
+    "@typescript-eslint/parser": "^5.55.0",
     "css-loader": "^6.7.3",
     "eslint": "^8.36.0",
     "html-webpack-plugin": "^5.5.0",
@@ -28,7 +29,9 @@
   },
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
-    "build": "pnpm i && webpack --config webpack.prod.js"
+    "build": "pnpm i && pnpm format && webpack --config webpack.prod.js",
+    "format": "prettier --write src",
+    "lint": "eslint --ext js,ts,tsx src"
   },
   "husky": {
     "hooks": {
@@ -37,8 +40,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
+      "pnpm lint"
     ]
   },
   "dependencies": {
