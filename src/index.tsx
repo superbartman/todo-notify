@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom';
 import { Button, message, Tabs, TabsProps } from 'antd';
 import { CoffeeOutlined, PushpinOutlined } from '@ant-design/icons';
 
+import checkTask from './utils/check-task';
+
 const NotiTable = lazy(() => import('./components/noti-table'));
 const Drink = lazy(() => import('./components/drink'));
-
-import checkTask from './utils/check-task';
 
 const App: React.FC = () => {
   const [messageApi, contextHolder] = message.useMessage();
