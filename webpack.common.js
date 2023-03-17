@@ -53,20 +53,23 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         include: path.resolve(__dirname, 'src'),
         use: [
           {
-            loader: 'ts-loader',
-            options: { transpileOnly: true },
-          },
-        ],
-      },
+            loader: 'swc-loader',
+            options: {
+              jsc: {
+                parser: {
+                  syntax: 'typescript',
+                  tsx: true
+                },
+              }
+            }
+          }
+        ]
+      }
     ],
   },
 };
