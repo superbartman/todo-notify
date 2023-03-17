@@ -2,7 +2,7 @@ const selfSetInterval = (cb: Function, timeout: number, taskType?: string) => {
   let timer: number = null;
   const interval = () => {
     timer = setTimeout(() => {
-      // test 2
+      // test
       console.log('interval', taskType);
       const result = cb(timer);
       if (result && result.then) {
