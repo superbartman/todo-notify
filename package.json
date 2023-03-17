@@ -33,15 +33,19 @@
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "pnpm i && pnpm format && webpack --config webpack.prod.js",
-    "lint": "eslint --ext js,ts,tsx src",
-    "prepare": "husky install"
+    "format": "prettier --write src",
+    "lint": "eslint --ext js,ts,tsx src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "pnpm lint",
-      "eslint --cache --fix"
-    ],
-    "*.src": "prettier --write"
+      "pnpm format"
+    ]
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
