@@ -44,7 +44,7 @@
     "*.{js,ts,tsx}": [
       "pnpm lint",
       "prettier --write",
-      "git add ."
+      "git add"
     ]
   },
   "dependencies": {
