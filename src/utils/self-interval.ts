@@ -2,7 +2,7 @@ const selfSetInterval = (cb: Function, timeout: number, taskType?: string) => {
   let timer: number = null;
   const interval = () => {
     timer = setTimeout(() => {
-      // test
+      // eslint-disable-next-line no-console
       console.log('interval', taskType);
       const result = cb(timer);
       if (result && result.then) {
