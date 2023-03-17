@@ -34,18 +34,14 @@
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "pnpm i && pnpm format && webpack --config webpack.prod.js",
     "format": "prettier --write src",
-    "lint": "eslint --ext js,ts,tsx src"
+    "lint": "eslint --ext js,ts,tsx src",
+    "precommit": "lint-staged",
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pnpm lint"
-    }
+  "gitHooks": {
+    "pre-commit": "pnpm precommit"
   },
-  "pre-commit": [
-    "pnpm lint"
-  ],
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "*.{js,jsx,ts,tsx}": [
       "pnpm lint",
       "pnpm format"
     ]
